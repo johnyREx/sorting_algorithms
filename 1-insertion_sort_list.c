@@ -13,19 +13,21 @@ listint_t *iter, *insert, *tmp;
 if (list == NULL || *list == NULL || (*list)->next == NULL)
 return;
 
-for (iter = (*list)->next; iter != NULL; iter = tmp)
+for (iter = (*list)->next, tmp = iter->next; iter != NULL; iter = tmp)
 {
 tmp = iter->next;
 insert = iter->prev;
+
 while (insert != NULL && iter->n < insert->n)
 {
 if (insert->prev != NULL)
 insert->prev->next = iter;
 else
 *list = iter;
+
 if (iter->next != NULL)
 iter->next->prev = insert;
-insert->next = iter->next;
+
 iter->prev = insert->prev;
 iter->next = insert;
 insert->prev = iter;
