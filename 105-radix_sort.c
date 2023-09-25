@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 /**
- * getmax - Get the maximum value from an array of int.
- * @array: The array of ints.
+ * getMax - Get the maximum value from an array of int.
+ * @array: The array of integers
  * @size: the size of the array
  *
  * Return: The maximum value.
@@ -28,6 +28,7 @@ int getMax(int *array, size_t size)
 /**
  * countingSort - Perform counting sort for a specific digit.
  * @size: The size of the array.
+ * @array: The array to be sorted
  * @exp: The current exponent for the digit being sorted.
  */
 
